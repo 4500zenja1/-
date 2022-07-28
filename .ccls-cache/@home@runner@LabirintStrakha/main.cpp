@@ -1,5 +1,8 @@
 #include <iostream>
+#include "files.h"
+#include "interface.h"
 
 int main() {
-  std::cout << "Hello World!\n";
+  output("help/start.txt");
+  startUp();
 }
