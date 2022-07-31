@@ -1,15 +1,24 @@
 #include <iostream>
 #include <fstream>
 
-void output(std::string filename) {
-  std::ifstream file(filename);
+using std::string;
+using std::ifstream;
+using std::cout;
+using std::endl;
+using std::getline;
+
+void output(string filename) {
+  ifstream file(filename);
   if (file.is_open()) {
-    std::string line;
-    while(std::getline(file, line)) {
-      std::cout << line << std::endl;
+    for (int i = 0; i < 35; i++) cout << "=";
+    string line;
+    while(getline(file, line)) {
+      cout << line << endl;
     }
+    for (int i = 0; i < 35; i++) cout << "=";
+    cout << endl;
     file.close();
   } else {
-    std::cout << "Не удалось прочесть файл " << filename << ".\nОбратитесь к разработчику\n";
+    cout << "Не удалось прочесть файл " << filename << ".\nОбратитесь к разработчику\n";
   }
 }
